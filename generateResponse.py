@@ -6,10 +6,15 @@ Created on Wed Jan 30 14:03:35 2019
 """
 import random
 
+from nltk import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from nltk.stem import WordNetLemmatizer
+import logging
+
+from preprocess import generateSentenceTokens
+logger = logging.getLogger(__name__)
 
 
 def lemTokens(tokens):
@@ -17,12 +22,23 @@ def lemTokens(tokens):
     lemmatizer = WordNetLemmatizer()
     return [lemmatizer.lemmatize(token) for token in tokens]
 
+def porterStemmerInput(input):
+    logger.debug(input)
+    tokens = generateSentenceTokens(input)
+    ps = PorterStemmer()
+    pstokens = [ps.stem(w) for w in tokens]
+    userInput = ' '.join(pstokens)
+    logger.debug(userInput)
+    return userInput
+
 
 def generateResponse(userInput, sentences, askResponseDict, ql, similarityThredhold=0.7):
     # prevent bad input
     if similarityThredhold > 1 or similarityThredhold < 0:
         similarityThredhold = 0.5
-    sentences.append(userInput)
+
+    logger.info(userInput)
+    sentences.append(porterStemmerInput(userInput))
 
     # vetorize sentences and userinput for fllowing similarity calculation
     TfidfVec = TfidfVectorizer(tokenizer=lemTokens, stop_words='english')

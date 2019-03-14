@@ -10,7 +10,7 @@ https://github.com/gunthercox/chatterbot-corpus
 """
 import logging
 from chatbot.logger_util import get_logger
-from generateResponse import generateResponse
+from generateResponse import generateResponse, porterStemmerInput
 from preprocess import pureQuestionsText, generateSentenceTokens, generateConversationTurnDict, sanitize_questions
 import warnings
 warnings.simplefilter(action='ignore', category=UserWarning)
@@ -53,7 +53,7 @@ while flag:
             print("ROBO: You are welcome..")
         else:
             print("ROBO: "+ generateResponse(userInput, sentenceTokens, qrDict, ql))
-            sentenceTokens.remove(userInput)
+            sentenceTokens.remove(porterStemmerInput(userInput))
     else:
         flag = False
         print("ROBO: Bye! take care..")
