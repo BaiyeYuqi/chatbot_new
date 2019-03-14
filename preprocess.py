@@ -14,6 +14,7 @@ import logging
 
 nltk.download('punkt')
 nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
 
 logger = logging.getLogger(__name__)
 
@@ -45,10 +46,19 @@ def pureQuestionsText(qrDict):
     return questions
 
 
+def pos_tag_sentence(sentence):
+    tokens = nltk.word_tokenize(sentence)
+    tokens_new = nltk.pos_tag(tokens)
+    tokens_new = [_[0] for _ in tokens_new]
+    logger.debug(tokens_new)
+    return ' '.join(tokens_new)
+
+
 def generateSentenceTokens(questions):
     import nltk
     sentences = nltk.sent_tokenize(questions)
     logger.debug(sentences)
+    sentences = [pos_tag_sentence(_) for _ in sentences]
     return sentences
 
 
