@@ -19,6 +19,9 @@ The following steps decribe the logic of this program:
 
 The training corpus used in our project comes from this [Repo](https://github.com/gunthercox/chatterbot-corpus)
 
+### Assignment 3 Feature Introduction:
+* A simple gui for user to typing which make the conversation more clear to see
+ 
 ### How to use this program:
 * Open spyder or anything can run python file
 * Open two console
