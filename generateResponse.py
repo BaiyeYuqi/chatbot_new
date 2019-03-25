@@ -4,12 +4,12 @@ Created on Wed Jan 30 14:03:35 2019
 
 @author: whq672437089
 """
-import random
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-from nltk.stem import WordNetLemmatizer
+from nltk.stem import 
+
+import random
 
 
 def lemTokens(tokens):
@@ -40,6 +40,6 @@ def generateResponse(userInput, sentences, askResponseDict, ql, similarityThredh
     else:
         question = ql[idx]
         print("matched question from database: " + question)
-        answers = askResponseDict.get(question)
-        robotResponse = '' + random.choice(answers)
+       
+        robotResponse = '' + askResponseDict.get(question)
         return robotResponse

@@ -10,12 +10,10 @@ Created on Tue Jan 29 16:50:30 2019
 import string
 import nltk
 import re
-import logging
 
 nltk.download('punkt')
 nltk.download('wordnet')
 
-logger = logging.getLogger(__name__)
 
 def generateConversationTurnDict(inputText):
     # split text to independent conversation turn by usinig '--'
@@ -27,32 +25,32 @@ def generateConversationTurnDict(inputText):
     for turn in conversationTurnWithoutEmpty:
         # divide turn into question and answers
         # first part is question as key,second part is response as value
-        subparts = re.split(r'\s+-', turn)
-        question = subparts[0].strip()
-        question = sanitize_questions(question)
-        answers = [_.strip() for _ in subparts[1:]]
-        qrDict[question] = answers
-    logger.debug(qrDict)
+        subparts=re.split(r'\s+-', turn)
+        if(len(subparts)==2):
+            sub1=subparts[0].rstrip().lstrip()
+            qrDict[sub1]=subparts[1].rstrip()
     return qrDict
 
 
 def pureQuestionsText(qrDict):
-    questions = ""
+    questions=""
     # extract questions and combine them into one text
     for question, response in qrDict.items():
-        questions += question + ' .\n '
-    logger.debug(questions)
+        question=sanitize_questions(question)
+        questions=questions+question+' .\n '
     return questions
 
 
 def generateSentenceTokens(questions):
     import nltk
     sentences = nltk.sent_tokenize(questions)
-    logger.debug(sentences)
     return sentences
 
 
 def sanitize_questions(question):
-    """ Clean extra punctuations, white space and newlines"""
-    sanitized_question = question.translate(str.maketrans('', '', string.punctuation)).strip()
+    sanitized_question = question.translate(str.maketrans('', '', string.punctuation)).rstrip().lstrip()
     return sanitized_question
+
+
+
+   
