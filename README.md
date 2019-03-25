@@ -1,8 +1,8 @@
-# 310 ChatBot
+# 310 Assignment 3
 
-### Team Member: 
+### Author: 
 
-Yue Cao, ALex Qin, Yuqi Sun, Haoqiu Wu, Michael Wu
+Yuqi Sun
 
 ### Introduction: 
 
@@ -20,9 +20,12 @@ The following steps decribe the logic of this program:
 The training corpus used in our project comes from this [Repo](https://github.com/gunthercox/chatterbot-corpus)
 
 ### How to use this program:
-* Fork it.
-* Make sure training corpus and the program are in the same folder
-* Run from command line `python main.py`
+* Open spyder or anything can run python file
+* Open two console
+* First run server.py in first console
+* Second run client.py in second console
+* type you question in the client gui appears and click send
+* than you will receive answer with question recorded on server gui
 
 
 
