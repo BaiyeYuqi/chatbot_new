@@ -21,7 +21,7 @@ The training corpus used in our project comes from this [Repo](https://github.co
 
 ### Assignment 3 Feature Introduction:
 * A simple gui for user to typing which make the conversation more clear to see
- 
+ ![Image text]https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553550117(1).jpg
 ### How to use this program:
 * Open spyder or anything can run python file
 * Open two console
