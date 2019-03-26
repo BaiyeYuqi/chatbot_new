@@ -23,6 +23,22 @@ The training corpus used in our project comes from this [Repo](https://github.co
 * A simple gui for user to typing which make the conversation more clear to see
 
  ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553550117(1).jpg)
+ 
+* Add extra topic about detail of sports which make user have more topics to talk about
+
+ ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553551392(1).jpg)
+ 
+ * Add the feature that can handle spelling mistakes which makes the conversation more smooth
+ 
+  ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553551440(1).jpg)
+  
+  * use one of the language toolkits to improve the correctness of matching, which is WordNetLemmatize that can restore word trunk
+  
+  ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553551518(1).jpg)
+  
+   * use of sockets so this chatbot can communicate with other agent if the HOST and PORT is the same 
+   
+   ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553551665(1).jpg)
 ### How to use this program:
 * Open spyder or anything can run python file
 * Open two console
