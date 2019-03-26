@@ -1,9 +1,6 @@
 
 # -*- coding: utf-8 -*-
 """
-Created on Wed March 19 15:03:35 2019
-
-@author: whq672437089
 """
 
 import socket

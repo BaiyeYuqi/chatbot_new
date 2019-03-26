@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan 30 14:03:35 2019
-
-@author: whq672437089
 """
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -16,7 +13,7 @@ def lemTokens(tokens):
     return [lemmatizer.lemmatize(token) for token in tokens]
 
 
-def generateResponse(userInput, sentences, askResponseDict, ql, similarityThredhold=0.7):
+def generateResponse(userInput, sentences, askResponseDict, ql, similarityThredhold=0.8):
     # prevent bad input
     if ((similarityThredhold>1) or (similarityThredhold<0)):
         similarityThredhold=0.5
