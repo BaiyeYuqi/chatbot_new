@@ -32,7 +32,7 @@ The training corpus used in our project comes from this [Repo](https://github.co
  
   ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553551440(1).jpg)
   
-  * use one of the language toolkits to improve the correctness of matching, which is WordNetLemmatize that can restore word trunk
+  * use one of the language toolkits to improve the correctness of matching, which is WordNetLemmatize that can restore word trunk, and  use the cosine_similarity tool to match the best similarity question, also use the Tfidvecrorizer to classify the question
   
   ![Image text](https://github.com/BaiyeYuqi/chatbot_new/blob/Gui-and-sockets-finished/img/1553551518(1).jpg)
   
